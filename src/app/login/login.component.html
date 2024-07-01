@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="display: flex; justify-content: center; margin-top: 100px;" fxLayoutAlign="center center" fxFill>
+  <form style="width:1000px; " class="container" fxLayout="column" fxLayoutGap="20px" [formGroup]="loginForm">
+    <h1>Log In</h1>
+    <div *ngIf="errMsg.length > 0" fxLayout="column" fxLayoutGap="5px">
+      <span *ngFor="let msg of errMsg">{{msg}}</span>
+    </div>
+    <div>
+        <input type="text" placeholder="email" formControlName="email">
+    </div>
+    <div style="margin-top: 30px;">
+        <input type="password" placeholder="password" formControlName="password">
+
+    </div>
+    <div style="margin-top: 30px;">
+        <button (click)="login()">Submit</button>
+    </div>
+    
+  </form>
+</div>
